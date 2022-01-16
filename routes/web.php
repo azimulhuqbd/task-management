@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\TaskController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,5 +22,14 @@ Route::get('/', function () {
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
+
+Route::get('/categories', [CategoryController::class, 'index'])->middleware(['auth'])->name('category');
+Route::post('/categories', [CategoryController::class, 'store'])->middleware(['auth'])->name('save');
+Route::get('/categories/create', [CategoryController::class, 'create'])->middleware(['auth'])->name('create');
+Route::get('/categories/{id}/edit', [CategoryController::class, 'edit'])->middleware(['auth'])->name('edit');
+Route::put('/categories/{id}', [CategoryController::class, 'update'])->middleware(['auth'])->name('update');
+Route::delete('/categories/{id}', [CategoryController::class, 'destroy'])->middleware(['auth'])->name('delete');
+
+Route::get('/tasks', [TaskController::class, 'index'])->middleware(['auth'])->name('task');
 
 require __DIR__.'/auth.php';

@@ -71,7 +71,7 @@ class CategoryController extends Controller
         }
 
         $data['category'] = $category;
-//
+
         return view('categories.edit', $data);
     }
 

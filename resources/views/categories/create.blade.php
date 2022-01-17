@@ -1,6 +1,6 @@
 <x-layout>
     <x-section>
-        <x-form method="POST" action="{{ route('save') }}">
+        <x-form method="POST" action="{{ route('save_category') }}">
             <h3 class="mb-6 bg-gray-200 border-b border-gray-100 p-2">{{ __('Add New Category') }}</h3>
             <div class="mb-6">
                 <label for="category" class="block mb-2 uppercase font-bold text-xs text-gray-700">{{ __('Category Name:') }}</label>

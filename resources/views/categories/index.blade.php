@@ -1,6 +1,6 @@
 <x-layout>
     <x-section class="mt-8">
-        <a href="{{ route('create') }}" class="bg-blue-400 text-white rounded py-2 px-4 hover:bg-blue-500">
+        <a href="{{ route('create_category') }}" class="bg-blue-400 text-white rounded py-2 px-4 hover:bg-blue-500">
             {{ __('Add New Category') }}
         </a>
 
@@ -15,8 +15,8 @@
                 @if(!$category_list->isEmpty())
                     @foreach($category_list as $category)
                         <tr>
-                            <td class="border border-slate-300 p-3">{{ $category->name }}</td>
-                            <td class="flex justify-items-center border-r border-b border-slate-300 p-3">
+                            <td class="border border-slate-300 p-3 text-center">{{ $category->name }}</td>
+                            <td class="flex justify-center border-r border-b border-slate-300 p-3">
                                 <a href="/categories/{{ $category->id }}/edit" class="bg-orange-400 text-white rounded py-2 px-4 hover:bg-orange-500">
                                     {{ __('Edit') }}
                                 </a>

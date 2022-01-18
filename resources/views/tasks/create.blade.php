@@ -14,7 +14,7 @@
                     <select id="task_category" name="task_category" class="block appearance-none w-full border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
                         <option value="">{{ __('*--- Select A Category ---*') }}</option>
                         @foreach($task_categories as $category)
-                            <option value="{{ $category->id }}" {{ old('task_category')==$category->id ? 'selected': '' }}>{{ $category->name }}</option>
+                            <option value="{{ $category->id }}" {{ old('task_category')=== strval($category->id) ? 'selected': '' }}>{{ $category->name }}</option>
                         @endforeach
                     </select>
                 </div>
@@ -35,7 +35,7 @@
                     <select name="task_status" id="task_status" class="block appearance-none w-full border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
                         <option value="">{{ __('*--- Select A Status ---*') }}</option>
                         @foreach($task_status as $key => $status)
-                            <option value="{{ $key }}" {{ old('task_status')==$key ? 'selected': '' }}>{{ $status }}</option>
+                            <option value="{{ $key }}" {{ old('task_status') === strval($key) ? 'selected': '' }}>{{ $status }}</option>
                         @endforeach
                     </select>
                 </div>

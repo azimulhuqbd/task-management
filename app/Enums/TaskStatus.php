@@ -11,8 +11,8 @@ use BenSampo\Enum\Enum;
  */
 final class TaskStatus extends Enum
 {
-    const Pending =   0;
-    const Ongoing =   1;
+    const Pending = 0;
+    const Ongoing = 1;
     const Done = 2;
 
     public static function getDescription($value): string
